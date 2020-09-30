@@ -1,12 +1,23 @@
-# cerebro-tools
+# bing-tools
 
 > Library package for [Cerebro](http://www.cerebroapp.com) app plugin developers, that includes most used functions
 
+Must be run with bing-tools
+
+## mochapack
+
+change `mocha-webpack` to `mochapack`
+
+```shell
+npm ls mochapack mocha
+```
+
 ## Documentation
+
 ### Memoize
 
 ```js
-const { memoize } = require('cerebro-tools');
+const { memoize } = require('cerebro-tools')
 
 const fetchResults = memoize(() => {
   // Your long running function
@@ -20,13 +31,13 @@ Under the hood it just uses [memoizee](https://github.com/medikoo/memoizee). Che
 ### Search
 
 ```js
-const { search } = require('cerebro-tools');
+const { search } = require('cerebro-tools')
 
 // Filter your results array
-const results = search(arr, 'something', (el) => el.key);
+const results = search(arr, 'something', el => el.key)
 
 // Display filtered results
-display(results);
+display(results)
 ```
 
 Simple function to search in your collection:
@@ -34,9 +45,10 @@ Simple function to search in your collection:
 `search = (items, term, toString = (item) => item) => {}`
 
 Where
-* `items` – your array;
-* `term` – search term;
-* `toString` – function to convert your collection item to string.
+
+- `items` – your array;
+- `term` – search term;
+- `toString` – function to convert your collection item to string.
 
 ## Related
 

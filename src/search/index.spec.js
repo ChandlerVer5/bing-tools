@@ -9,11 +9,14 @@ describe('search', () => {
   })
 
   it('searchs in objects array with toString function', () => {
-    const items = [{
-      name: 'Facetime'
-    }, {
-      name: 'Terminal'
-    }]
+    const items = [
+      {
+        name: 'Facetime'
+      },
+      {
+        name: 'Terminal'
+      }
+    ]
     const term = 'face'
     const toString = x => x.name
     expect(search(items, term, toString)).toEqual([items[0]])
@@ -42,7 +45,7 @@ describe('search', () => {
         filename: 'App Store.prefPane'
       }
     ]
-    const toString = (app) => `${app.name} ${app.filename}`
+    const toString = app => `${app.name} ${app.filename}`
 
     it('with lowercase', () => {
       const term = 'app'
@@ -79,19 +82,19 @@ describe('search', () => {
     expect(search(items, term)).toEqual([])
   })
 
-  it("searchs for numbers in the begining of the word", () => {
+  it('searchs for numbers in the begining of the word', () => {
     const items = ['Spotlight', 'Facetime', '1Password']
     const term = '1'
     expect(search(items, term)).toEqual(['1Password'])
   })
 
-  it("searchs for numbers in the end of word", () => {
+  it('searchs for numbers in the end of word', () => {
     const items = ['1Password', 'PS4 Remote']
     const term = '4'
     expect(search(items, term)).toEqual(['PS4 Remote'])
   })
 
-  it("searchs for numbers and chars", () => {
+  it('searchs for numbers and chars', () => {
     const items = ['Spotlight', 'Facetime', '1Password']
     const term = '1pass'
     expect(search(items, term)).toEqual(['1Password'])

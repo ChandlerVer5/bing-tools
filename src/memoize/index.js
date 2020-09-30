@@ -1,3 +1,3 @@
-import memoize from 'memoizee';
+import memoize from 'memoizee'
 
-export default memoize;
+export default memoize

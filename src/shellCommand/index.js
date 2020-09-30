@@ -1,5 +1,4 @@
-import { exec } from 'child_process';
-
+// import child_exec from 'child_process'
 /**
  * Promise-wrapper for shell-script execution
  *
@@ -8,6 +7,8 @@ import { exec } from 'child_process';
  */
 export default function (cmd) {
   return new Promise((resolve, reject) => {
-    exec(cmd, (error, stdout) => error ? reject(error) : resolve(stdout));
-  });
+    global.MainRpc.command_exec(cmd, (error, stdout) =>
+      error ? reject(error) : resolve(stdout)
+    )
+  })
 }

@@ -1,8 +1,8 @@
 # bing-tools
 
-> Library package for [Cerebro](http://www.cerebroapp.com) app plugin developers, that includes most used functions
+> Library package for [Bing](https://github.com/ChandlerVer5/Bing) app plugin developers, that includes most used functions
 
-Must be run with bing-tools
+modified from [cerebro-tools](https://github.com/KELiON/cerebro-tools)🙏, this tools Must be run with bing-tools
 
 ## mochapack
 
@@ -17,21 +17,21 @@ npm ls mochapack mocha
 ### Memoize
 
 ```js
-const { memoize } = require('cerebro-tools')
+const { memoize } = require('bing-tools')
 
 const fetchResults = memoize(() => {
   // Your long running function
 })
 ```
 
-Use `memoize` function from `cerebro-tools` for your long-running functions, like API-requests.
+Use `memoize` function from `bing-tools` for your long-running functions, like API-requests.
 
 Under the hood it just uses [memoizee](https://github.com/medikoo/memoizee). Check their documentation for more details.
 
 ### Search
 
 ```js
-const { search } = require('cerebro-tools')
+const { search } = require('bing-tools')
 
 // Filter your results array
 const results = search(arr, 'something', el => el.key)
